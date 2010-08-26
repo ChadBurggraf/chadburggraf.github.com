@@ -1,0 +1,20 @@
+---
+layout: about
+title: About This Site
+---
+
+p(crumb). "Home":/ » %About%
+
+h1. I'm Waiting For You, Localhost
+
+%(drop-cap)Y% es, this site is a web developer's pun on _Waiting For Guffman_. Now that we have that out of the way...
+
+h2. Software
+
+All pages on this site are 100% statically served. I write everything in *Notepad.exe*, live, on the server.
+
+The first part is true. Everything is actually built using the absurdly-easy-to-use "Jekyll":http://github.com/mojombo/jekyll static site generator. The site's source is on *GitHub* for your perusing pleasure: "http://github.com/chadburggraf/wfl":http://github.com/chadburggraf/wfl.
+
+h2. What's In A Name?
+
+_Waiting for localhost_ is something every web developer (especially those using compiled languages) has spent significant portions of their lives doing. It's the new *"I'm compiling!":http://xkcd.com/303/*. Credit for the name goes to the brilliant and very good looking "Jason Sukut":http://www.myspace.com/thankyoudomo.

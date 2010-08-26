@@ -1,0 +1,13 @@
+---
+layout: post
+title: Hi, How Are You?
+---
+
+!(frame right)/assets/images/hi-how-are-you.jpg(Daniel Johnston: Hi, How Are You?)! %(drop-cap)I% like "Daniel Johnston's":http://hihowareyou.com/ story. So instead of being all internet-y (?) and writing some sort of ironic _first post!_, let's get back to 1983.
+
+I'm Chad and this is my new website. It's not very interesting right now. In fact, odds are good that it will never be very interesting. But I'm a software developer, and *software developers have websites*, dammit. We have _things to say_.
+
+Until I have _things to say,_ I'm going to work on writing documentation for some of my little side projects. That way, if you download one of them and actually want to use it, you can find out how.
+
+bq. I have a new philosophy to treat every day as Christmas Day. So go out and buy yourself a present every day and make every day Christmas Day.
+%(cite)- Daniel Johnston%

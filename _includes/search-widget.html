@@ -1,0 +1,15 @@
+<li class="widget search">
+	<div id="search"></div>
+	<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAHe32admAXXbf03EtJ7dWQhR0rhYu5mq6TOL04X9o3TfgMfwfjRT0oAMY8VTwTcDgzxGnCfH7WXwmqw"></script>
+	<script type="text/javascript">
+		google.load("search", "1");
+		google.setOnLoadCallback(function() {
+			var control = new google.search.SearchControl(),
+				search = new google.search.WebSearch();
+			
+			search.setSiteRestriction('waitingforlocalhost.com');
+			control.addSearcher(search);
+			control.draw(document.getElementById("search"));
+		});
+	</script>
+</li>
