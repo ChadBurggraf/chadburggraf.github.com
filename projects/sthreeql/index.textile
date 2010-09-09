@@ -1,0 +1,37 @@
+---
+layout: sthreeql
+title: SThreeQL
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %SThreeQL%
+
+h1. SThreeQL
+
+p(meta). Updated 31 Aug 2010
+
+Check out the the following Usage Guides:
+
+* "Configuration":configuration.html
+* "Running from the Command Line":running-from-the-command-line.html
+* "Installing the Service":installing-the-service.html
+
+h2. What it is
+
+A simple, file-based backup and restore utility for *Microsoft SQL Server,* utilizing *Amazon S3* as the storage medium.
+
+If you're looking to do something with low latency or on a large scale, then just turn yourself around right now. You're probably more interested in "SQL Server Replication":http://msdn.microsoft.com/en-us/library/ms151198.aspx.
+
+I personally find SThreeQL useful as a developer that needs regular access to production snapshots, and only needs backups to happen a couple of times per day. You might be able to use it if:
+
+* You have root access to your database server machines
+* Your databases are relatively small
+* You would like a single point of configuration for backing up all of your databases on a machine
+* You're doing something absurd like scheduled batch files and FTP for your backup process right now (yes, be ashamed)
+
+h2. Why it's awesome
+
+You get *perfectly-durable* backups of your production databases with almost zero effort. You get easy access to recent versions of any of your databases on your development or staging machines. You get to use a made-up acronym.
+
+h2. Check it out
+
+You can browse or clone the repository from "http://github.com/chadburggraf/sthreeql":http://github.com/chadburggraf/sthreeql. Or just grab a binary release from "http://github.com/chadburggraf/sthreeql/downloads":http://github.com/chadburggraf/sthreeql/downloads.

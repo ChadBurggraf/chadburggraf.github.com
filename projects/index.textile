@@ -3,9 +3,11 @@ layout: default
 title: Chad Burggraf's Projects
 ---
 
-p(crumb). "Home":/ » %Projects%
+p(crumb). "Home":/ &raquo; %Projects%
 
 h1. Show Me The Code!
+
+p(meta). Updated 26 Aug 2010
 
 %(drop-cap)L% ike every &quot;great&quot; developer, I make it 50% - 80% of the way through *many, many* projects before abandoning them. Once in a while, I get something to the point where I'm only _embarrassed_, rather than _mortified_, about it. Below is a small sampling of such. 
 
@@ -16,37 +18,38 @@ h2. Virtual Keychain
 A web-based password management service that I've been running since 2006. This was the first piece of code I finished on my own after college. 
 
 * Visit "virtualkeychain.com":http://virtualkeychain.com/
-* "Learn more »":virtual-keychain
+* "Learn more &raquo;":virtual-keychain.html
 
 h2. Tasty Libraries
 
 My *monolithic* general purpose C# library. Against standard wisdom, I'm packing every reusable module I write into one massive DLL so I can easily drop it into new projects. Includes things like convenience extension methods, a Google geocoding client library, a background job queue and processor, a URL token library and a bunch more. My C# kitchen sink.
 
 - Get the "source code (GitHub)":http://github.com/chadburggraf/tasty
-- "Documentation »":tasty-libraries
+- "Documentation &raquo;":tasty-libraries/
 
 h2. SThreeQL
 
-A rudimentary "Amazon S3":http://aws.amazon.com/s3/ -based Microsoft SQL Server backup/restore utility. 
+A basic Microsoft SQL Server backup/restore utility for use with "Amazon S3":http://aws.amazon.com/s3/.
 
-*Use case:* you're a consultant or contractor managing a number of small-to-medium client sites deployed on a couple of private servers. Automatically back up all of the SQL Server databases on a schedule of your choosing to Amazon S3. Optionally restore them periodically to your staging server, and enable your developers to restore the latest backups easily to their development machines.
+*Use case:* You're a consultant or contractor managing a number of small-to-medium client sites deployed on a couple of private servers. You want to automatically back up all of the SQL Server databases on a schedule of your choosing to Amazon S3. You optionally want to restore them periodically to your staging server, and enable your developers to restore the latest backups easily to their development machines.
 
-- Get the "source code (GitHub)":http://github.com/chadburggraf/sthreeql
-- "Documentation »":sthreeql
+* Get a "binary release":http://github.com/chadburggraf/sthreeql/downloads
+* Get the "source code":http://github.com/chadburggraf/sthreeql
+* Read the "documentation":sthreeql/
 
 h2. Kayjax
 
 An OO(Object Oriented) C# Ajax library. This replaced a previous RPC(Remote Procedure Call) -style library I had written when C# 3.0 and WCF(Windows Communication Foundation) came out. This project provides a super lightweight alternative to creating JSON(JavaScript Object Notation) API(Application Programming Interface)s using ASP.NET MVC or similar.
 
 - Get the "source code (GitHub)":http://github.com/chadburggraf/kayjax
-- "Documentation »":kayjax
+- "Documentation &raquo;":kayjax
 
 h2. SWFClipboard
 
 A JavaScript interface for interacting with a user's clipboard via Flash. I use this to provide clipboard functionality on "Virtual Keychain":http://virtualkeychain.com/.
 
 - Get the "source code (GitHub)":http://github.com/chadburggraf/swfclipboard
-- "Documentation »":swfclipboard
+- "Documentation &raquo;":swfclipboard
 
 h2. WMD
 
@@ -55,4 +58,4 @@ A fork of a fork of a WYSIWYM(What You See Is What You Mean) "Markdown":http://d
 I completely re-architected the structure of the code and the external API(Application Programming Interface). I wanted the editor to be more extensible for a couple of projects I needed it on, and I wanted to make sure it stayed library independent. Basically, all of the core text-manipulation algorithms remain unchanged, but everything around them was re-done.
 
 - Get the "source code (GitHub)":http://github.com/chadburggraf/wmd
-- "Documentation »":wmd
+- "Documentation &raquo;":wmd

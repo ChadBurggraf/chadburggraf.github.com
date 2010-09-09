@@ -1,0 +1,59 @@
+---
+layout: sthreeql
+title: Configuration - SThreeQL
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &raquo; %Configuration%
+
+h1. SThreeQL Configuration
+
+p(meta). Updated 31 Aug 2010
+
+XML is the best thing ever. With that premise in hand, I set out to let you manage SThreeQL *entirely in XML.* Rockin' good news!
+
+Seriously though, the configuration is pretty straightforward and shouldn't prove to be too much of a burden. To start things off, you should configure your data sources and AWS buckets:
+
+h2. Data Sources and AWS Targets
+
+When backing up, your source is a SQL Server instance and your destination is a file on Amazon S3. When restoring, your source is a file on Amazon S3 and your destination is a SQL Server instance.
+
+<script src="http://gist.github.com/560218.js?file=sthreeql-configuration-01.xml"></script>
+
+There are two major things to note about the above configuration:
+
+# Each SQL Server instance must be reference by the same name you'd use to reference it in a connection string
+# Windows Authentication is not currently supported, so you have to use SQL Server Authentication
+
+h2. Backup and Restore Targets
+
+To run backups of a database on the server, you configure what server the database exists on and a pretty name to use when referencing the target for execution. Restore targets are a superset of the parameters for backup targets and let you specify a different catalog name to restore the database to as well as a specific directory on disk to restore the database files to.
+
+<script src="http://gist.github.com/560218.js?file=sthreeql-configuration-02.xml"></script>
+
+@awsBucketName@ refers to an @awsTarget@ you configured earlier. @dataSource@ refers to the name of a @dataSource@ you configured earlier.
+
+Note that you can provide a prefix for the target. Say you want to back everything up to a single bucket, perhaps named after the server like @alpha-backups@. You could prefix each target based on the logical database name or client name, like @DatabaseA@, @DatabaseB@, etc., which would result in the following &quot;directory&quot; structure:
+
+bc. - alpha-backups
+  |- DatabaseA
+     |- DatabaseA_BACKUP-DATE.bak.gz
+     |- DatabaseA_BACKUP-DATE.bak.gz
+     |- DatabaseA_BACKUP-DATE.bak.gz
+  |- DatabaseB
+     |- DatabaseB_BACKUP-DATE.bak.gz
+     |- DatabaseB_BACKUP-DATE.bak.gz
+     |- DatabaseB_BACKUP-DATE.bak.gz
+  |- DatabaseC
+     |- DatabaseC_BACKUP-DATE.bak.gz
+     |- DatabaseC_BACKUP-DATE.bak.gz
+     |- DatabaseC_BACKUP-DATE.bak.gz
+
+Of the above configuration attributes, @awsPrefix@, @restoreCatalogName@ and @restorePath@ are optional. Note that @catalogName@ refers to the first part of the actual backup file name on S3 in the case of a restore target.
+
+h2. Schedules
+
+Once you have all that set up, you can define some recurring schedules. Each schedule is just a start date and repeat type with a list of backup and/or restore targets:
+
+<script src="http://gist.github.com/560218.js?file=sthreeql-configuration-03.xml"></script>
+
+Easy as pie! Now that you're all configured, fire up a console and "run some backups from the command line":running-from-the-command-line.html.

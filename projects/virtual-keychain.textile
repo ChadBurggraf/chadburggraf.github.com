@@ -1,0 +1,35 @@
+---
+layout: default
+title: Virtual Keychain
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %Virtual Keychain%
+
+h1. Virtual Keychain
+
+p(meta). Updated 26 Aug 2010
+
+h2. What it is
+
+Web-based password/credential management application. Nothing super crazy, but it's turned out to be a very useful and efficient way for me to manage my *300+* login/password combinations. 
+
+bq. Whether you're in Tokyo or Kansas City, you never have to remember to backup a &quot;password database&quot; or bring a hardcopy along again.
+%(cite)- Me!%
+
+h2. Why it's awesome
+
+# It's a *single-page application*, and is extremely fast. Even with an account as large as mine, all operations are virtually instantaneous. 
+# It's built around a completely stateless JSON(JavaScript Object Notation) API(Application Programming Interface). That means that the web site is just a client interacting with the API and maintaining all of its own state (yes, I've built an iPhone application; no, it's not published yet).
+# Event for such a simple application, it gets surprisingly tricky to maintain state consistency across all of the possible operations. So having that all, you know, work, is pretty neat.
+# I've managed to keep it running and updated since 2006 with no desire for revenue. That doesn't really make it awesome, per se, but it's something, right?
+
+h2. Check it out
+
+Feel free to "give it a whirl":http://virtualkeychain.com/ . Everything is completely anonymous, so you can create a dummy account and just play around for a while. If you manage to break something, "please let me know!":mailto:chad.burggraf@gmail.com
+
+h2. Some hidden goodies
+
+* You can add multiple accounts to your session. If you add entries for your secondary accounts to your primary account, with the URLs pointing to the _virtualkeychain.com_ domain, they will be automatically added to future sessions for you.
+* Passwords are automatically copied to your clipboard when you click an entry's URL.
+* You can copy entries between any of the accounts in your current session.
+* Refreshing the page or navigating away causes you to immediately be logged out.

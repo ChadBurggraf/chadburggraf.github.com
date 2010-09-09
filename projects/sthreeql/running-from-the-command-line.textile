@@ -1,0 +1,20 @@
+---
+layout: sthreeql
+title: Running From the Command Line - SThreeQL
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &raquo; %Running From the Command Line%
+
+h1. Command Line Fu
+
+p(meta). Updated 31 Aug 2010
+
+Unfortunately, there's not really much to it. Surely not enough to _devote an entire web page!_ Babies are crying somewhere...
+
+Assuming you're "all configured":configuration.html (and assuming you did your configuration in @s3ql.exe.config@), start by just executing @s3ql.exe@.
+
+Great Scott! It tells you what to do!
+
+
+
+There you go. Rock some backups. Restore something to a different catalog name. Have yourself a sandwich.

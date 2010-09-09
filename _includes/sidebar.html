@@ -13,31 +13,38 @@
 			<h4><a href="/projects" title="All my codes are belong to you">Projects</a></h4>
 			<ul>
 				<li>
-					<a rel="bookmark" title="Virtual Keychain" href="/projects/virtual-keychain">Virtual Keychain</a>
+					<a title="Virtual Keychain" href="/projects/virtual-keychain.html">Virtual Keychain</a>
 				</li>
 				<li>
-					<a rel="bookmark" title="Tasty Libraries" href="/projects/tastylibraries.html">Tasty Libraries</a>
+					<a title="Tasty Libraries" href="/projects/tasty-libraries/">Tasty Libraries</a>
 				</li>
 				<li>
-					<a rel="bookmark" title="SThreeQL" href="/projects/sthreeql.html">SThreeQL</a>
+					<a title="SThreeQL" href="/projects/sthreeql/">SThreeQL</a>
 				</li>
 				<li>
-					<a rel="bookmark" title="Kayjax" href="/projects/kayjax.html">Kayjax</a>
+					<a title="Kayjax" href="/projects/kayjax.html">Kayjax</a>
 				</li>
 				<li>
-					<a rel="bookmark" title="SWFClipboard" href="/projects/swfclipboard.html">SWFClipboard</a>
+					<a title="SWFClipboard" href="/projects/swfclipboard.html">SWFClipboard</a>
 				</li>
 				<li>
-					<a rel="bookmark" title="WMD" href="/projects/wmd.html">WMD</a>
+					<a title="WMD" href="/projects/wmd.html">WMD</a>
 				</li>
 			</ul>
 		</li>
 		<li class="widget articles">
-			<h4><span>Articles</span></h4>
+			<h4><a href="/archive.html" title="Check out all my awesome info porn">Articles</a></h4>
 			<ul>
+				{% for post in site.posts limit:10 %}
 				<li>
-					<a rel="bookmark" title="Companyman: Employee Loyalty and What It Means For Your Future" href="/2010/08/23/companyman-employee-loyalty-and-what-it-means-for-your-future.html">Companyman: Employee Loyalty and What It Means For Your Future</a>
+					<a title="{{ post.title }}" href="{{ post.url }}">{{ post.title }}</a>
 				</li>
+				{% endfor %}
+				{% if site.posts.count > 10 %}
+				<li class="all">
+					<a href="/archive.html" title="Check out more awesome info porn">Even more articles &raquo;</a>
+				</li>
+				{% endif %}
 			</ul>
 		</li>
 		{% include search-widget.html %}

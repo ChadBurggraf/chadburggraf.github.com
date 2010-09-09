@@ -3,9 +3,11 @@ layout: about
 title: About This Site
 ---
 
-p(crumb). "Home":/ » %About%
+p(crumb). "Home":/ &raquo; %About%
 
 h1. I'm Waiting For You, Localhost
+
+p(meta). Updated 26 Aug 2010
 
 %(drop-cap)Y% es, this site is a web developer's pun on _Waiting For Guffman_. Now that we have that out of the way...
 

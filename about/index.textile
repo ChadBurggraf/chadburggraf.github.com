@@ -3,9 +3,11 @@ layout: about
 title: About Chad Burggraf; Elegant Bachelor, Infamous Wit
 ---
 
-p(crumb). "Home":/ » %About%
+p(crumb). "Home":/ &raquo; %About%
 
 h1. Hi. My name is Chad Burggraf. I live in Arizona.
+
+p(meta). Updated 26 Aug 2010
 
 !(frame right)/assets/images/chad-burggraf.jpg(Chad Burggraf is Rocking)! %(drop-cap)T% o be honest with you, I'm not completely sure why I have a website. It appears to be required as a technology-savvy 20-something. So here we are.
 

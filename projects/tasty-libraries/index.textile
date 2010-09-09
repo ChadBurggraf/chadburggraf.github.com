@@ -1,0 +1,31 @@
+---
+layout: tasty-libraries
+title: Tasty Libaries
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %Tasty Libraries%
+
+h1. Tasty Libraries
+
+p(meta). Updated 26 Aug 2010
+
+Check out the the following Usage Guides:
+
+* "Geocoding":geocoding.html
+* "HTTP Redirects":http-redirects.html
+* "Background Jobs":background-jobs.html
+* "URL Tokens":url-tokens.html
+
+h2. What it is
+
+A *monolithic* general purpose C# library. My C# kitchen sink.
+
+h2. Why it's awesome
+
+You want to run some background jobs? _I've got you covered._ Want to write a @DataSet@ out to an Excel or ODS(OpenDocument Spreadsheet) file? _I've got you covered._ How about generating some decent-looking URL tokens that reference arbitrary objects? _I've got that, too._ Want to... well, you get the idea.
+
+There isn't anything super revolutionary in there. However, it's used often by me and is kept pretty up to date. The code should generally be clean and easy to follow.
+
+h2. Check it out
+
+You can browse or clone the repository from "http://github.com/ChadBurggraf/tasty-libraries":http://github.com/ChadBurggraf/tasty-libraries.

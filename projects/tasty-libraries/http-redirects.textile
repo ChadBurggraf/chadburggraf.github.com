@@ -1,0 +1,29 @@
+---
+layout: tasty-libraries
+title: HTTP Redirects - Tasty Libaries
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %HTTP Redirects%
+
+h1. Request _This_ URL, Get _That_ URL
+
+p(meta). Updated 26 Aug 2010
+
+Did you move some pages around on your website? Do you want to ensure that a set of pages are served over SSL(Secure Sockets Layer)? Let me redirect it for you!
+
+# Drop a copy of @Tasty.dll@ into your project.
+# Add a couple of lines to your @Web.config@
+# ???
+# Redirect for fun and profit!
+
+Basically, you just need to add the @HttpRedirectModule@ into your @<httpModules>@ configuration section, and then configure your regex-based redirect rules. The rules are evaluated in order, and the first rule to match is acted on.
+
+Below is the *actual configuration for "Virtual Keychain":http://virtualkeychain.com:*
+
+<script src="http://gist.github.com/552746.js?file=tasty-libraries-http-redirect-01.xml"></script>
+
+As you can see, I'm cleanly accommodating legacy URLs by permanently redirecting them to their updated counterparts. And it *works on IIS6!* 
+
+In the snippet above, you can see that all of my redirects are @Permanent@ (HTTP 301) redirects. You can also supply a value of @Temporary@ to get an HTTP 302 redirect.
+
+Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Http/":http://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Http/

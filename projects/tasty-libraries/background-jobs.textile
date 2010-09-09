@@ -1,0 +1,94 @@
+---
+layout: tasty-libraries
+title: Background Jobs - Tasty Libaries
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %Background Jobs%
+
+h1(#top). Hey Bob, Carry This Heavy Rock Up That Big Hill While I Eat My Lunch, Please
+
+p(meta). Updated 26 Aug 2010
+
+Jump to: "Configuration":#configuration | "Deployment":#deployment | "Persistence":#persistence
+
+Background processing is obviously a huge topic, and there are a ton of amazing solutions out there for getting it done. *This isn't one of those solutions.*
+
+However, this solution _might be for you_ if:
+
+# You don't need something as robust as "Resque":http://github.com/defunkt/resque#readme
+# You need something more robust than Jeff Attwood's "HTTP Cache background task hack":http://blog.stackoverflow.com/2008/07/easy-background-tasks-in-aspnet/
+# You like things that are easy to use and taste like candy
+
+*Tasty Jobs* is basically a multi-threaded FIFO(First In First Out) queue that executes job tasks for you. You get to define your jobs in an OO(Object Oriented) style and I take care of the rest. You can even do recurring jobs via configuration-based schedules!
+
+Here is a complete job class for sending an email:
+
+<script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-01.cs"></script>
+
+To enqueue a new instance of @SendEmailJob@:
+
+<script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-02.cs"></script>
+
+h2(#configuration). Configuration
+
+There are three things you might need to configure to run jobs: *global behavior*, *recurring schedules* and *the job store* (i.e., persistence layer, like SQL Server). Strictly speaking, no configuration is required. However, if you don't set a job store then it will default to @MemoryJobStore@, which is probably not what you want.
+
+<script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-03.cs"></script>
+
+The configuration above sets the job store to @SqlServerJobStore@, which is one of 3 persistence layers that ship with *Tasty Libraries* (the other two are @MemoryJobStore@ and @PostgresJobStore@). The job runner's heartbeat is set to 10,000 ms (10s, which is the default if left un-configured), and the maximum number of parallel jobs is set to 25 (also the default).
+
+Next, I create an hourly schedule and add a single job to it. @repeatHours@ is a @double@, so you can make schedules that repeat at intervals of less than one hour if necessary.
+
+Note that the job store is pointed at the connection string I want to use via the generic @metadata@ collection. Both @SqlServerJobStore@ and @PostgresJobStore@ look in this collection for a key of @ConnectionStringName@ to initialize their connection string values.
+
+To set up your database for use as a job store, run the appropriate setup script from "https://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Jobs/Sql/":https://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Jobs/Sql/.
+
+"back to top":#top
+
+h2(#deployment). Deployment
+
+There are three ways to "deploy" a job runner to run your jobs: in the ASP.NET process (during development), from the console, or from a Windows service.
+
+I do not recommend you deploy a job runner inside of the ASP.NET process on production, unless you have a pretty light job load. That said, to get yourself up and running quickly, just add the HTTP module to your configuration:
+
+<script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-04.xml"></script>
+
+h3. From the console
+
+This is where it gets pretty cool. @TastyConsole.exe@ includes a job runner. Point it at your application and it will bootstrap itself up and start carrying heavy stuff. More importantly, _it will watch for changes in your application, and gracefully recycle itself when something is updated_.
+
+Fire it up: @TastyConsole.exe jobs -d PATH_TO_BIN -c PATH_TO_CONFIG -v -l@
+
+@PATH_TO_BIN@ is the path to your website's or application's @bin@ directory, which must contain a copy of @Tasty.dll@, as well as any assemblies that define your jobs. @PATH_TO_CONFIG@ is the path to your @Web.config@ or application configuration file, which contains the configuration described above. The @-v@ switch enables logging to the console window, and the @-l@ switch enables logging to a file (which will be placed in your application's @bin@ directory).
+
+<div class="figure no-border" id="fig1">
+	<a id="fig1-image" href="/assets/content/tasty-libraries-jobs-console-full.png"><img alt="Jobs console example" title="Click to view full size" src="/assets/content/tasty-libraries-jobs-console.png"/></a>
+
+	%Figure 1%. An example of running jobs for a target application from TastyConsole.exe. Click the image to view the full-sized version.
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() { $('#fig1-image').fancybox({'titleShow':false}); });
+</script>
+
+Notice that I issued a _safe quit_ command, which caused the job runner to stop dequeueing jobs and shut itself down when it finished processing all of the currently running jobs.
+
+h3. From a Windows service
+
+Did I mention it gets *even cooler*? Extrapolating on running jobs from the console, we can use @TastyJobService.exe@ to spawn a job runner for _one or more_ applications on the server.
+
+Install @TastyJobService.exe@ using @InstallUtil.exe@ (on my machine, it is located at C:\Windows\Microsoft.NET\Framework\v2.0.50727):
+
+@InstallUtil.exe TastyJobService.exe@
+
+Once it is installed, open up @TastyJobService.exe.config@ and add your application(s):
+
+<script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-05.xml"></script>
+
+Now just start the service, which will launch processes for each application your configure. If a process fails or something goes terribly wrong, an event will be logged to the Windows Event Log, and it will keep trying to re-launch the failed process indefinitely.
+
+"back to top":#top
+
+h2(#persistence). Persistence
+
+"back to top":#top

@@ -27,15 +27,17 @@ abb,
 acronym
 {
 	cursor: help;
+	border-bottom: dotted 1px #222;
 }
 
 blockquote
 {
-	color: #444;
-	text-shadow: #e9f6fb 0 1px 0;
+	color: #445E6C;
+	text-shadow: #fff 0 1px 0;
 	margin-left: 0;
 	padding-left: 43px;
-	background: url(../images/blockquote.gif) no-repeat;
+	background: url(../images/blockquote.png) no-repeat;
+	behavior: url(/assets/script/iepngfix.htc);
 	border: none;
 }
 
@@ -86,6 +88,13 @@ h2
 
 p
 {
+	margin-bottom: 22px;
+}
+
+pre
+{
+	padding: 11px;
+	background: #bde4f6;
 	margin-bottom: 22px;
 }
 
@@ -153,10 +162,17 @@ sup
 	padding: 0;
 }
 
+#logo a
+{
+	display: block;
+	width: 725px;
+	height: 133px;
+}
+
 #logo span 
 {
-	position: relative;
-	margin-left: -4000px;
+	position: absolute;
+	margin-left: -9999px;
 }
 
 #push
@@ -191,6 +207,24 @@ sup
 	border-bottom-left-radius: 22px;
 }
 
+ul.archive
+{
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.archive li span
+{
+	font-size: 12px;
+	color: #445e6c;
+	margin-right: 4px;
+}
+
+.archive li a
+{
+	margin-left: 4px;
+}
+
 .crumb
 {
 	font-size: 12px;
@@ -214,9 +248,8 @@ sup
 	padding: 11px;
 }
 
-.figure-right
+.figure.right
 {
-	float: right;
 	margin: 0 0 8px 22px;
 	width: 222px;
 }
@@ -236,16 +269,14 @@ sup
 	margin: 0;
 }
 
-.figure p img
-{
-	display: inline-block;
-	border: none;
-	margin: 0;
-}
-
 .figure p span
 {
 	color: #222;
+}
+
+.figure.no-border img
+{
+	border: none;
 }
 
 .frame
@@ -265,6 +296,13 @@ sup
 	color: #445e6c;
 	font-size: 12px;
 	line-height: 20px;
+}
+
+.gist
+{
+	font-size: 13px;
+	line-height: 1em;
+	margin-bottom: 22px;
 }
 
 .gsc-control
@@ -293,7 +331,7 @@ input.gsc-input
 	width: 160px !important;
 	font-family: Georgia, "Times New Roman", Times, serif !important;
 	font-size: 1em !important;
-	color: #444 !important;
+	color: #445E6C !important;
 	background: #efefef !important;
 	border-color: #aaa #ddd #ddd #aaa !important;
 	border-width: 1px !important;
@@ -323,6 +361,14 @@ img.gsc-branding-img-noclear
 .gs-result .gs-snippet
 {
 	color: #445E6C !important;
+}
+
+p.meta 
+{
+	position: relative;
+	font-size: 14px;
+	color: #888;
+	margin: -22px 0 22px;
 }
 
 .post
@@ -359,7 +405,6 @@ img.gsc-branding-img-noclear
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	border-bottom: solid 1px #e9f6fb;
-	background-color: #3cbdfe;
 	height: 30px;
 }
 
@@ -367,13 +412,20 @@ img.gsc-branding-img-noclear
 .sidebar h4 a
 {
 	display: block;
-	color: #fff;
+	color: #445E6C;
+	text-shadow: #fff 0 1px 0;
 	text-decoration: none;
 	height: 29px;
-	border-bottom: solid 1px #0e95ff;
-	border-right: solid 1px #0e95ff;
+	border-bottom: solid 1px #76c4fa;
 	padding: 0 55px 0 30px;
-	margin-right: -1px;
+}
+
+.sidebar h4 a:hover,
+.sidebar h4 a:active,
+.sidebar h4 a:focus
+{
+	color: green;
+	text-decoration: underline;
 }
 
 input.text,
@@ -381,7 +433,7 @@ textarea.text
 {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 1em;
-	color: #444;
+	color: #445E6C;
 	background: #efefef;
 	border-color: #aaa #ddd #ddd #aaa;
 	border-width: 1px;
@@ -434,9 +486,11 @@ textarea.text
 }
 
 .widget.hi a,
-.widget.bye a
+.widget.bye a,
+.widget .all a
 {
 	color: #af0032;
+	text-decoration: underline;
 }
 
 .widget.search p
