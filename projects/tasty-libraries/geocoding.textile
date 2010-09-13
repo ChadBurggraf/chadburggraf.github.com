@@ -11,7 +11,7 @@ p(meta). Updated 26 Aug 2010
 
 The task is simple: given an address, what is its latitude and longitude? Good thing the folks at Google are willing to tell us!
 
-*Update:* While writing this up, I became aware of the release of Google's "Geocoding API V3":http://code.google.com/apis/maps/documentation/geocoding/. According to their "deprecation policy":http://code.google.com/apis/maps/terms.html#section_4_4, the API this code is based off of should be available for at least 3 years. I promise to update _Tasty Libraries_ to the new API *way before then.*
+*Update:* While writing this up, I became aware of the release of Google's "Geocoding API V3":http://code.google.com/apis/maps/documentation/geocoding/. According to their "deprecation policy":http://code.google.com/apis/maps/terms.html#section_4_4, the API this code is based on should be available for at least 3 years. I promise to update _Tasty Libraries_ to the new API *way before then.*
 
 Drop a reference to @Tasty.dll@ into your project and include the @Tasty.Geocode@ namespace in your code file.
 
@@ -23,4 +23,4 @@ Pretty easy, eh? You can also add your API key to your configuration file and us
 
 There are a ton of classes in the @Tasty.Geocode@ namespace, covering (I believe) the entire "Geocoding API V2":http://code.google.com/apis/maps/documentation/geocoding/v2/index.html.
 
-Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Geocode/":http://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Geocode/
+Browse the source code on *GitHub:* "http://github.com/chadburggraf/tasty/tree/master/source/tasty/geocode/":http://github.com/chadburggraf/tasty/tree/master/source/tasty/geocode/

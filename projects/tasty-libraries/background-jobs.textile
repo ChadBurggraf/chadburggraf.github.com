@@ -7,13 +7,15 @@ p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.
 
 h1(#top). Hey Bob, Carry This Heavy Rock Up That Big Hill While I Eat My Lunch, Please
 
-p(meta). Updated 26 Aug 2010
+p(meta). Updated 12 Sep 2010
 
 Jump to: "Configuration":#configuration | "Deployment":#deployment | "Persistence":#persistence
 
-Background processing is obviously a huge topic, and there are a ton of amazing solutions out there for getting it done. *This isn't one of those solutions.*
+You need a _middleweight_ product for processing background jobs in C#? Yeah, I do too!
 
-However, this solution _might be for you_ if:
+Background processing is a huge topic, and there are a ton of hacky and enterprise-grade solutions out there for getting it done. *This isn't one of those solutions.*
+
+However, this is _a solution_. It might be _your solution_ if:
 
 # You don't need something as robust as "Resque":http://github.com/defunkt/resque#readme
 # You need something more robust than Jeff Attwood's "HTTP Cache background task hack":http://blog.stackoverflow.com/2008/07/easy-background-tasks-in-aspnet/
@@ -41,7 +43,7 @@ Next, I create an hourly schedule and add a single job to it. @repeatHours@ is a
 
 Note that the job store is pointed at the connection string I want to use via the generic @metadata@ collection. Both @SqlServerJobStore@ and @PostgresJobStore@ look in this collection for a key of @ConnectionStringName@ to initialize their connection string values.
 
-To set up your database for use as a job store, run the appropriate setup script from "https://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Jobs/Sql/":https://github.com/ChadBurggraf/tasty-libraries/tree/master/Source/Tasty/Jobs/Sql/.
+To set up your database for use as a job store, run the appropriate setup script from "http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/sql/":http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/sql/.
 
 "back to top":#top
 
@@ -57,7 +59,9 @@ h3. From the console
 
 This is where it gets pretty cool. @TastyConsole.exe@ includes a job runner. Point it at your application and it will bootstrap itself up and start carrying heavy stuff. More importantly, _it will watch for changes in your application, and gracefully recycle itself when something is updated_.
 
-Fire it up: @TastyConsole.exe jobs -d PATH_TO_BIN -c PATH_TO_CONFIG -v -l@
+Fire it up: 
+
+@TastyConsole.exe jobs -d PATH_TO_BIN -c PATH_TO_CONFIG -v -l@
 
 @PATH_TO_BIN@ is the path to your website's or application's @bin@ directory, which must contain a copy of @Tasty.dll@, as well as any assemblies that define your jobs. @PATH_TO_CONFIG@ is the path to your @Web.config@ or application configuration file, which contains the configuration described above. The @-v@ switch enables logging to the console window, and the @-l@ switch enables logging to a file (which will be placed in your application's @bin@ directory).
 
@@ -85,10 +89,22 @@ Once it is installed, open up @TastyJobService.exe.config@ and add your applicat
 
 <script src="http://gist.github.com/552786.js?file=tasty-libraries-jobs-05.xml"></script>
 
-Now just start the service, which will launch processes for each application your configure. If a process fails or something goes terribly wrong, an event will be logged to the Windows Event Log, and it will keep trying to re-launch the failed process indefinitely.
+Now just start the service, which will launch processes for each application you configure. If a process fails or something goes terribly wrong, an event will be logged to the Windows Event Log, and it will keep trying to re-launch the failed process indefinitely.
 
 "back to top":#top
 
 h2(#persistence). Persistence
 
+The persistence layer is pluggable, so you can implement your own if necessary. For now, Tasty Libraries ships with the following job stores:
+
+1. @MemoryJobStore@ - All job state is maintained in memory. This store is unbounded, and is intended primarily for testing and playground usage.
+2. @SqlServerJobStore@ - Persistence to Microsoft SQL Server.
+3. @PostgresJobStore@ - Persistence to PostgresSQL.
+
+You're probably already wondering where your technology of choice is (ahem, MySQL or SQLLite). Yeah, I know. Send "me an email":mailto:chad.burggraf@gmail.com and I'd be happy to look into building it for you.
+
+That said, building your own is pretty simple. You need to implement @IJobStore@ and @IJobStoreTransaction@. If you're doing something from scratch, I recommend extending @JobStore@. If you're building something that targets an RDBMS(Relational Database Management System), extend @SqlJobStore@. If you do implement something, send me a pull request!
+
 "back to top":#top
+
+Browse the source code on *GitHub:* "http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/":http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/

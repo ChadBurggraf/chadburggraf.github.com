@@ -11,11 +11,11 @@ p(meta). Updated 31 Aug 2010
 
 XML is the best thing ever. With that premise in hand, I set out to let you manage SThreeQL *entirely in XML.* Rockin' good news!
 
-Seriously though, the configuration is pretty straightforward and shouldn't prove to be too much of a burden. To start things off, you should configure your data sources and AWS buckets:
+Seriously though, the configuration is pretty straightforward and shouldn't prove to be too much of a burden. To start things off, you should configure your data sources and AWS targets:
 
 h2. Data Sources and AWS Targets
 
-When backing up, your source is a SQL Server instance and your destination is a file on Amazon S3. When restoring, your source is a file on Amazon S3 and your destination is a SQL Server instance.
+When backing up, your source is a SQL Server instance and your destination is a file on Amazon S3. When restoring, it's just the opposite.
 
 <script src="http://gist.github.com/560218.js?file=sthreeql-configuration-01.xml"></script>
 
@@ -26,7 +26,7 @@ There are two major things to note about the above configuration:
 
 h2. Backup and Restore Targets
 
-To run backups of a database on the server, you configure what server the database exists on and a pretty name to use when referencing the target for execution. Restore targets are a superset of the parameters for backup targets and let you specify a different catalog name to restore the database to as well as a specific directory on disk to restore the database files to.
+To run backups of a database on the server, you configure what server the database exists on and a pretty name to use when referencing the target for execution. Restore targets are a superset of the parameters for backup targets and let you specify a different catalog name to restore the database to, as well as a specific directory on disk to restore the database files to.
 
 <script src="http://gist.github.com/560218.js?file=sthreeql-configuration-02.xml"></script>
 
@@ -48,7 +48,7 @@ bc. - alpha-backups
      |- DatabaseC_BACKUP-DATE.bak.gz
      |- DatabaseC_BACKUP-DATE.bak.gz
 
-Of the above configuration attributes, @awsPrefix@, @restoreCatalogName@ and @restorePath@ are optional. Note that @catalogName@ refers to the first part of the actual backup file name on S3 in the case of a restore target.
+Of the above configuration attributes, @awsPrefix@, @restoreCatalogName@ and @restorePath@ are optional. Note that @catalogName@ refers to the first part of the actual backup file name on S3.
 
 h2. Schedules
 

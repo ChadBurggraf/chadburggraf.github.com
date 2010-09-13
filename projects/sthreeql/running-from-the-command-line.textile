@@ -7,14 +7,36 @@ p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &r
 
 h1. Command Line Fu
 
-p(meta). Updated 31 Aug 2010
+p(meta). Updated 12 Sep 2010
 
-Unfortunately, there's not really much to it. Surely not enough to _devote an entire web page!_ Babies are crying somewhere...
+Unfortunately, there's not really much to it. Surely not enough to _warrant an entire web page!_ Babies are crying somewhere...
 
-Assuming you're "all configured":configuration.html (and assuming you did your configuration in @s3ql.exe.config@), start by just executing @s3ql.exe@.
+Assuming you're "all configured":configuration.html (and that you did your configuration in @s3ql.exe.config@), start by just executing @s3ql.exe@.
+
+<div class="figure no-border" id="fig1">
+	<a id="fig1-image" href="/assets/content/sthreeql-help-console-full.png"><img alt="SThreeQL help console" title="Click to view full size" src="/assets/content/sthreeql-help-console.png"/></a>
+
+	%Figure 1%. The SThreeQL console help menu. Access by running @s3ql.exe@ or @s3ql.exe --man@. Click the image to view the full-sized version.
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() { $('#fig1-image').fancybox({'titleShow':false}); });
+</script>
 
 Great Scott! It tells you what to do!
 
+Okay, now that we know we're not alone out here in the cold, let's run some backup and restore targets. In this contrived example, I'll backup the database @McTesterson@ to my S3 account, and then restore it again to the non-existent database @McTesterson_Test@.
 
+<div class="figure no-border" id="fig2">
+	<a id="fig2-image" href="/assets/content/sthreeql-backup-restore-console-full.png"><img alt="SThreeQL backup &amp; restore console" title="Click to view full size" src="/assets/content/sthreeql-backup-restore-console.png"/></a>
+
+	%Figure 2%. Running backup and restore operations with SThreeQL. Click the image to view the full-sized version.
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() { $('#fig2-image').fancybox({'titleShow':false}); });
+</script>
 
 There you go. Rock some backups. Restore something to a different catalog name. Have yourself a sandwich.
+
+When you're finished licking mayo from your fingers, "install the service":installing-the-service.html and run everything automatically.

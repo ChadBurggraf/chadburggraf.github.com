@@ -11,7 +11,7 @@ p(meta). Updated 26 Aug 2010
 
 h2. What it is
 
-Web-based password/credential management application. Nothing super crazy, but it's turned out to be a very useful and efficient way for me to manage my *300+* login/password combinations. 
+A web-based password/credential management application. Nothing super crazy, but it's turned out to be a very useful and efficient way for me to manage my *300+* login/password combinations. 
 
 bq. Whether you're in Tokyo or Kansas City, you never have to remember to backup a &quot;password database&quot; or bring a hardcopy along again.
 %(cite)- Me!%
@@ -20,7 +20,7 @@ h2. Why it's awesome
 
 # It's a *single-page application*, and is extremely fast. Even with an account as large as mine, all operations are virtually instantaneous. 
 # It's built around a completely stateless JSON(JavaScript Object Notation) API(Application Programming Interface). That means that the web site is just a client interacting with the API and maintaining all of its own state (yes, I've built an iPhone application; no, it's not published yet).
-# Event for such a simple application, it gets surprisingly tricky to maintain state consistency across all of the possible operations. So having that all, you know, work, is pretty neat.
+# Even for such a simple application, it gets surprisingly tricky to maintain state consistency across all of the possible operations. So having that all, you know, work, is pretty neat.
 # I've managed to keep it running and updated since 2006 with no desire for revenue. That doesn't really make it awesome, per se, but it's something, right?
 
 h2. Check it out

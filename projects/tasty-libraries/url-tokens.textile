@@ -1,0 +1,67 @@
+---
+layout: tasty-libraries
+title: URL Tokens - Tasty Libaries
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %URL Tokens%
+
+h1(#top). Create URLs That Reference Objects in C#
+
+p(meta). Updated 12 Sep 2010
+
+Jump to: "Getting Started":#started | "Persistence":#persistence | "URL Providers":#providers
+
+You're probably sending users password reset emails with some long, convoluted query string. Maybe it's a bunch of tokenized values that you've stuck together with duct tape and then encrypted. Maybe some user's email clients are losing or truncating some of the characters. Maybe it's just ugly.
+
+What you want then, is to turn an *object* into a short and sweet *URL* and then later turn that *URL* back into an *object*.
+
+I've got that for you. And trust me, you're not going to find a better price anywhere.
+
+h2(#started). Getting Started
+
+First, let's create an object that we want to turn into a URL by implementing @IUrlToken@. Using the example above, we just want to hold a user's ID (you can add a ton more information to the object without affecting the complexity of the final URL). Right now we're letting everything assume default values:
+
+<script src="http://gist.github.com/576568.js?file=tasty-url-tokens-01.cs"></script>
+
+Now, say we get a password reset request. We can generate a URL using the @QueryStringUrlTokenUrlProvider@, which will create URLs that place token values into the query string:
+
+<script src="http://gist.github.com/576568.js?file=tasty-url-tokens-02.cs"></script>
+
+Awesometown. Our  user receives the email, and about an our later our system gets a request at @URL_TO_PASSWORD_RESET_PAGE@. We can get the token object from the URL using the same provider that created the URL:
+
+<script src="http://gist.github.com/576568.js?file=tasty-url-tokens-03.cs"></script>
+
+Hah, and you thought this would be tricky! Here's what happened under the covers:
+
+1. We implemented @IUrlToken@ to maintain the data of our choosing.
+2. We asked @QueryStringUrlTokenUrlProvider@ to give us a URL for our token object.
+3. The provider used the configured @IUrlTokenStore@, which is @HttpCacheUrlTokenStore@ by default, to serialize and persist our token object, automatically generating a decent-looking URL.
+4. When we asked for the token object back, the provider again used the configured @IUrlTokenStore@ to find the serialized token object and de-serialize it for us.
+
+"back to top":#top
+
+h2(#persistence). Persistence
+
+Token persistence is handled by @IUrlTokenStore@ implementors. The default implementation, if left un-configured, is @HttpCacheUrlTokenStore@. I only recommend using this token store if your volume is fairly low or if you have very short expiration times (the default token expiry is 168 hours, or one week).
+
+The other two persistence layers shipped with Tasty URL Tokens are @SqlServerUrlTokenStore@ for Microsoft SQL Server, and @PostgresUrlTokenStore@ for PostgreSQL. To configure the token store to use by default:
+
+<script src="http://gist.github.com/576568.js?file=tasty-url-tokens-04.xml"></script>
+
+Note that the token store is pointed at the connection string I want to use via the generic @metadata@ collection. Both @SqlServerUrlTokenStore@ and @PostgresUrlTokenStore@ look in this collection for a key of @ConnectionStringName@ to initialize their connection string values.
+
+To set up your database for use as a URL token store, run the appropriate script from "https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens/Sql":https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens.
+
+Implementing your own @IUrlTokenStore@ is very simple. If you're building one from scratch, I recommend extending @UrlTokenStore@. If you're building one on top of an RDBMS(Relational Database Management System), you should extend @SqlUrlTokenStore@.
+
+"back to top":#top
+
+h2(#providers). URL Providers
+
+The final pieces in the puzzle that make all of this generically useful are @IUrlTokenUrlProvider@ implementors. These objects are responsible for providing the glue between @IUrlToken@ objects, an @IUrlTokenStore@ and an actual URL.
+
+The library ships with @QueryStringUrlTokenUrlProvider@, which is currently the only implementation that I provide. The providers are so simple to implement that I just haven't made it much of a priority to do any others. If you come across a repeatable scenario that you think another generic implementation could handle, feel free to "suggest it to me":mailto:chad.burggraf@gmail.com. Or send me a pull request ;)
+
+"back to top":#top
+
+Browse the source code on *GitHub:* "https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens":https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens

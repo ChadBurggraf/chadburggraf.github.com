@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>projects/sthreeql/configuration.textile</string>
+	<string>about/index.textile</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -197,6 +197,20 @@
 				<integer>7</integer>
 			</dict>
 		</dict>
+		<key>about/index.textile</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>28</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>assets/css/screen.css</key>
 		<dict>
 			<key>caret</key>
@@ -232,7 +246,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>14</integer>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -409,6 +423,7 @@
 		<string>projects/sthreeql/installing-the-service.textile</string>
 		<string>projects/tasty-libraries/background-jobs.textile</string>
 		<string>projects/sthreeql/configuration.textile</string>
+		<string>about/index.textile</string>
 		<string>assets/css/screen.css</string>
 		<string>_includes/sidebar-sthreeql.html</string>
 		<string>_layouts/sthreeql.html</string>

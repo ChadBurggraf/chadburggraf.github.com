@@ -11,10 +11,10 @@ p(meta). Updated 26 Aug 2010
 
 Check out the the following Usage Guides:
 
-* "Geocoding":geocoding.html
-* "HTTP Redirects":http-redirects.html
 * "Background Jobs":background-jobs.html
 * "URL Tokens":url-tokens.html
+* "Geocoding":geocoding.html
+* "HTTP Redirects":http-redirects.html
 
 h2. What it is
 
@@ -28,4 +28,4 @@ There isn't anything super revolutionary in there. However, it's used often by m
 
 h2. Check it out
 
-You can browse or clone the repository from "http://github.com/ChadBurggraf/tasty-libraries":http://github.com/ChadBurggraf/tasty-libraries.
+You can browse or clone the repository from "http://github.com/chadburggraf/tasty":http://github.com/ChadBurggraf/tasty-libraries. Or just grab a binary release from "http://github.com/chadburggraf/tasty/downloads":http://github.com/chadburggraf/tasty/downloads.

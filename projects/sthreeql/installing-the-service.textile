@@ -1,0 +1,26 @@
+---
+layout: sthreeql
+title: Installing the Service - SThreeQL
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &raquo; %Instlling the Service%
+
+h1. Installing SThreeQL as a Windows Service
+
+p(meta). Updated 12 Sep 2010
+
+Assuming you're "all configured":configuration.html (and that you copied your configuration to @s3qlservice.exe.config@), and assuming you've verified that everything works by "running the command line":running-from-the-command-line.html, you can install and start the Windows service.
+
+First, copy the SThreeQL binaries and configuration files to a permanent location (i.e., C:\Program Files\SThreeQL or similar). Now fire up a command line and execute the following:
+
+<script src="http://gist.github.com/560218.js?file=sthreeql-install-the-service-01.bat"></script>
+
+The above assumes that Windows is installed in the @C:\Windows@ directory, and SThreeQL has been copied to the @Program Files@ directory.
+
+Open the Services manager (Control Panel -> Administrative Tools -> Services) and locate SThreeQL. Right-click and select "Start". 
+
+If you make a configuration change, you'll need to restart the service. If you want to uninstall SThreeQL, run the following from the command line:
+
+<script src="http://gist.github.com/560218.js?file=sthreeql-install-the-service-02.bat"></script>
+
+Once the service is uninstalled, you can simply delete the permanent directory you placed the SThreeQL binaries into.
