@@ -15,8 +15,8 @@ h2. Software
 
 All pages on this site are 100% statically served. I write everything in *Notepad.exe*, live, on the server.
 
-The first part is true. Everything is actually built using the absurdly-easy-to-use "Jekyll":http://github.com/mojombo/jekyll static site generator. The site's source is on *GitHub* for your perusing pleasure: "http://github.com/chadburggraf/wfl":http://github.com/chadburggraf/wfl.
+The first part is true. Everything is actually built using the absurdly-easy-to-use "Jekyll":http://github.com/mojombo/jekyll static site generator. The site's source is on *GitHub* for your perusing pleasure: "http://github.com/ChadBurggraf/wfl":http://github.com/ChadBurggraf/wfl.
 
 h2. What's In A Name?
 
-_Waiting for localhost_ is something every web developer (especially those using compiled languages) has spent significant portions of their lives doing. It's the new *"I'm compiling!":http://xkcd.com/303/*. Credit for the name goes to the brilliant and very good looking "Jason Sukut":http://www.myspace.com/thankyoudomo.
+_Waiting for localhost_ is something every web developer (especially those using compiled languages) has spent significant portions of their lives doing. It's the new *"I'm compiling!":http://xkcd.com/303/*. Credit for the name goes to the very good looking "Jason Sukut":http://www.myspace.com/thankyoudomo.

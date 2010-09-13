@@ -34,4 +34,4 @@ You get *perfectly-durable* backups of your production databases with almost zer
 
 h2. Check it out
 
-You can browse or clone the repository from "http://github.com/chadburggraf/sthreeql":http://github.com/chadburggraf/sthreeql. Or just grab a binary release from "http://github.com/chadburggraf/sthreeql/downloads":http://github.com/chadburggraf/sthreeql/downloads.
+You can browse or clone the repository from "http://github.com/ChadBurggraf/sthreeql":http://github.com/ChadBurggraf/sthreeql. Or just grab a binary release from "http://github.com/ChadBurggraf/sthreeql/downloads":http://github.com/ChadBurggraf/sthreeql/downloads.

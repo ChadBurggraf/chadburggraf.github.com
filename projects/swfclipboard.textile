@@ -1,0 +1,86 @@
+---
+layout: default
+title: SWFClipboard
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %SWFClipboard%
+
+h1(#top). JavaScript + ??? = Clipboard
+
+p(meta). Updated 12 Sep 2010
+
+The answer: *Flash!* It's fun to loathe Flash, but sometimes it solves the problem you need solved. I needed a nice, clean way to provide *~1,000* clipboard targets on a page. You might only need to provide one. Either way, SWFClipboard has got your back.
+
+Okay, so let's jump straight into some code samples and live demos:
+
+"Hello, world!":#hello-world | "Copy &amp; Navigate":#copy-navigate | "Copy &amp; Notify":#copy-notify | "Dynamic Targets":#dynamic-targets  
+
+h2(#hello-world). Hello, World!
+
+To get started, try <a id="hello-world-target" href="javascript:void(0);">clicking me</a> to copy _Hello, world!_ to your clipboard.
+
+<script src="http://gist.github.com/576733.js?file=swfclipboard-01.js"></script>
+
+"back to top":#top
+
+h2(#copy-navigate). Copy &amp; Navigate
+
+Now let's try and navigate to <a id="copy-navigate-target" href="http://google.com/">http://google.com/</a> while copying "Goooogle" to the clipboard.
+
+<script src="http://gist.github.com/576733.js?file=swfclipboard-02.js"></script>
+
+Navigation behavior is inferred from the target element. Since the element above is a link to *http://google.com/*, the link is followed after the copy action takes place.
+
+We have to let Flash take care of the navigation because WebKit browsers will silently block a @window.open@ call that is not initiated by a direct user action. Opera may even block the Flash method, but at least it generates a warning.
+
+"back to top":#top
+
+h2(#copy-notify). Copy &amp; Notify
+
+Often we'll want to do something once text has been successfully copied to the user's clipboard. This time, after you copy <a id="copy-notify-target" href="javascript:void(0);">&quot;Alerts are terrible!&quot;</a>, you should see an alert notifying you that it is, in fact, terrible.
+
+<script src="http://gist.github.com/576733.js?file=swfclipboard-03.js"></script>
+
+"back to top":#top
+
+h2(#dynamic-targets). Dynamic Targets
+
+When I built "Virtual Keychain":http://virtualkeychain.com/, I ran into situations where there were 1,000+ clipboard targets on a page. It turns out that _1,000+ Flash movie instantiations is completely ludicrous._
+
+The solution is to create one @SWFClipboard@ instance, and ghost the mouse with it until you find a suitable target element.
+
+Each link below should copy its own text to your clipboard.
+
+* <a class="clipboard" href="javascript:void(0);">Target 1</a>
+* <a class="clipboard" href="javascript:void(0);">Target 2</a>
+* <a class="clipboard" href="javascript:void(0);">Target 3</a>
+
+<script src="http://gist.github.com/576733.js?file=swfclipboard-04.js"></script>
+
+"back to top":#top
+
+You can browse or clone the repository from "http://github.com/ChadBurggraf/swfclipboard":http://github.com/ChadBurggraf/swfclipboard. Or just grab a release from "http://github.com/ChadBurggraf/swfclipboard/downloads":http://github.com/ChadBurggraf/swfclipboard/downloads.
+
+<script type="text/javascript" src="/assets/swfclipboard/swfclipboard-1.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var flashUrl = "/assets/swfclipboard/swfclipboard-1.2.swf";
+		var cb1 = new SWFClipboard("hello-world-target", "Hello, world!", {flashUrl: flashUrl});
+		var cb2 = new SWFClipboard("copy-navigate-target", "Goooogle", {flashUrl: flashUrl});
+		var cb3 = new SWFClipboard("copy-notify-target", "Alerts are terrible!", {
+			flashUrl: flashUrl,
+            onTextCopied: function() { alert("I am terrible!"); }
+        });
+		var cb4 = new SWFClipboard("", "", {flashUrl: flashUrl});
+        document.onmousemove = function(event) {
+            event = event || window.event;
+            if (event) {
+                var element = event.target || event.srcElement;
+                if (element && element.className === "clipboard" && element !== cb4.movie()) {
+                    cb4.setCopyText(element.innerHTML);
+                    cb4.setTarget(element);
+                }
+            }
+        };
+	});
+</script>

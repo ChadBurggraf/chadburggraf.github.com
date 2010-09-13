@@ -50,7 +50,7 @@ The other two persistence layers shipped with Tasty URL Tokens are @SqlServerUrl
 
 Note that the token store is pointed at the connection string I want to use via the generic @metadata@ collection. Both @SqlServerUrlTokenStore@ and @PostgresUrlTokenStore@ look in this collection for a key of @ConnectionStringName@ to initialize their connection string values.
 
-To set up your database for use as a URL token store, run the appropriate script from "https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens/Sql":https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens.
+To set up your database for use as a URL token store, run the appropriate script from "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens/Sql":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens.
 
 Implementing your own @IUrlTokenStore@ is very simple. If you're building one from scratch, I recommend extending @UrlTokenStore@. If you're building one on top of an RDBMS(Relational Database Management System), you should extend @SqlUrlTokenStore@.
 
@@ -64,4 +64,4 @@ The library ships with @QueryStringUrlTokenUrlProvider@, which is currently the 
 
 "back to top":#top
 
-Browse the source code on *GitHub:* "https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens":https://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens
+Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens

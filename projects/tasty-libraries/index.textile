@@ -28,4 +28,4 @@ There isn't anything super revolutionary in there. However, it's used often by m
 
 h2. Check it out
 
-You can browse or clone the repository from "http://github.com/chadburggraf/tasty":http://github.com/ChadBurggraf/tasty-libraries. Or just grab a binary release from "http://github.com/chadburggraf/tasty/downloads":http://github.com/chadburggraf/tasty/downloads.
+You can browse or clone the repository from "http://github.com/ChadBurggraf/tasty":http://github.com/ChadBurggraf/tasty. Or just grab a binary release from "http://github.com/ChadBurggraf/tasty/downloads":http://github.com/ChadBurggraf/tasty/downloads.

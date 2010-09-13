@@ -43,7 +43,7 @@ Next, I create an hourly schedule and add a single job to it. @repeatHours@ is a
 
 Note that the job store is pointed at the connection string I want to use via the generic @metadata@ collection. Both @SqlServerJobStore@ and @PostgresJobStore@ look in this collection for a key of @ConnectionStringName@ to initialize their connection string values.
 
-To set up your database for use as a job store, run the appropriate setup script from "http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/sql/":http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/sql/.
+To set up your database for use as a job store, run the appropriate setup script from "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/Sql/":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/Sql/.
 
 "back to top":#top
 
@@ -107,4 +107,4 @@ That said, building your own is pretty simple. You need to implement @IJobStore@
 
 "back to top":#top
 
-Browse the source code on *GitHub:* "http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/":http://github.com/chadburggraf/tasty/tree/master/source/tasty/jobs/
+Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/
