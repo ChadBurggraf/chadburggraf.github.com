@@ -1,0 +1,77 @@
+---
+layout: wmd
+title: Demo &amp; Installation - WMD
+css: [/assets/wmd/wmd.css]
+scripts: [/assets/wmd/wmd.js]
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "WMD":/projects/wmd &raquo; Demo &amp; Installation
+
+h1. Demo &amp; Installation
+
+p(meta). Updated 13 Sep 2010
+
+First off, it's important to note that the default build *does not include showdown.js*, which will be needed on the page for live preview. You can either include _showdown.js_ (located in _lib/_) on your page before _wmd.js_, or you can create your own build to include it.
+
+For convenience, the source distribution contains a build script. You can run it with a couple of options:
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-01.sh"></script>
+
+* @--showdown@ will include _showdown.js_ into the output (*build/wmd.js*)
+* @--nocompress@ will turn off both JavaScript and CSS minification
+
+h2. Hello, World!
+
+To get started, add the @wmd.js@ and @wmd.css@ references to your document's @head@:
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-02.html"></script>
+
+Now you can create WMD instances by passing in the relevant DOM element IDs to the constructor. Note that you *must wait until the page has loaded before calling the WMD constructor.*
+
+h3. HTML
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-03.html"></script>
+
+h3. JS
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-04.js"></script>
+
+<div id="wmd-toolbar-1" class="wmd-toolbar"></div>
+<textarea id="wmd-input-1" class="wmd-input" rows="8" cols="40"></textarea>
+
+h2. Live Preview
+
+To enable live preview, you must first include a reference to _showdown.js_ in your document's @head@, before the reference to _wmd.js_. You can also run a custom build of _wmd.js_ that includes it automatically as discussed above.
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-05.html"></script>
+
+Now you need to create a preview container and tell the WMD constructor about it. This is done via the @options@ hash, which is basically a bag of all of the optionally overridable parameters.
+
+h3. HTML
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-06.html"></script>
+
+h3. JS
+
+<script src="http://gist.github.com/578530.js?file=wmd-demo-07.js"></script>
+
+<table>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<div id="wmd-toolbar-2" class="wmd-toolbar"></div>
+				<textarea id="wmd-input-2" class="wmd-input" rows="8" cols="40">## Hello, world!</textarea>
+			</td>
+			<td valign="top">
+				<div id="wmd-preview-2" class="wmd-preview"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		new WMD("wmd-input-1", "wmd-toolbar-1");
+		new WMD("wmd-input-2", "wmd-toolbar-2", {preview: "wmd-preview-2"})
+	});
+</script>

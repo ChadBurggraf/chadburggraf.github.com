@@ -1,0 +1,89 @@
+---
+layout: wmd
+title: Customization - WMD
+css: [/assets/wmd/wmd.css]
+scripts: [/assets/wmd/wmd.js]
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "WMD":/projects/wmd &raquo; Customization
+
+h1. Customization
+
+p(meta). Updated 13 Sep 2010
+
+One of the principle reasons for for forking from StackOverflow's "WMD fork":http://github.com/derobins/wmd/tree/master was to make customizing the editor much easier.
+
+I've created a very simple API(Application Programming Interface) for customizing both the editor's toolbar and for adding or altering commands. There are also plenty of helpers available for creating different dialogs and forms that may need to be launched from your custom commands. 
+
+h2. Toolbar
+
+The toolbar gets its layout from an optional setting you can pass in during the construction of a WMD instance. If you explicitly defined the default toolbar, it would look like this: 
+
+<script src="http://gist.github.com/578601.js?file=wmd-customization-01.js"></script>
+
+If you only wanted to put *Bold* and _Italic_ commands in the toolbar, you would construct your WMD instance like this:
+
+<script src="http://gist.github.com/578601.js?file=wmd-customization-02.js"></script>
+
+Of course, you can also change the order of the keys in the @commands@ string to change the order of the buttons in the toolbar.
+
+h2. Custom Commands
+
+There are four possible extension points that you can use when creating a custom command or changing the behavior of an existing command: 
+
+# A command definition object, which can be passed into the WMD constructor as part of the @commandTable@ option 
+# A command "builder" function that can take responsibility for actually instantiating a command object, and will be passed the following arguments: 
+** @wmd@ - The command's containing @WMD@ instance
+** @chunk@ - A helper object for working with the currently selected "chunk" of text 
+** @callback@ - A function that should be called when the command has finished its work 
+# A command "runner" function that will actually run the command, and can be patched onto @WMD.Command.runners@ when using the built-in @WMD.Command.create@  "builder" function and @WMD.Command@ class, and will be passed the following arguments: 
+** @wmd@ - The command's containing @WMD@ instance 
+** @chunk@ - A helper object for working with the currently selected "chunk" of text 
+** @callback@ - A function that should be called when the command has finished its work 
+# A completely custom command class, implementing the following interface: <script src="http://gist.github.com/578601.js?file=wmd-customization-03.js"></script>
+
+The command definition object can really look like anything, but two important pieces that should be considered are @shortcut@ and @builder@.
+
+As an example, a snippet from the internal command table: 
+
+<script src="http://gist.github.com/578601.js?file=wmd-customization-04.js"></script>
+
+h2. A Custom Command Example
+
+As an example, we'll build a custom command that alerts the currently selected text in the editor. We're going to assign our custom command a key of "alert", and use most of the existing infrastructure to complete its implementation.
+
+To allow the internal framework to be utilized fully, we need to create a function named @alert@ and patch it onto @WMD.Command.runners@, as internal commands are looked up here by key.
+
+So, let's start with the actual command implementation:
+
+<script src="http://gist.github.com/578601.js?file=wmd-customization-05.js"></script>
+
+Now we can construct our WMD instance with our custom command definition: 
+
+<script src="http://gist.github.com/578601.js?file=wmd-customization-06.js"></script>
+
+<div id="alert-toolbar" class="wmd-toolbar"></div>
+<textarea id="alert-input" class="wmd-input" rows="8" cols="40"></textarea>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		WMD.Command.runners.alert = function(wmd, chunk, callback) {
+		    // Is there any text selected?
+		    if (chunk.selection) {
+			    alert(chunk.selection);
+		    } else {
+				alert("Hey guy, you need to select something if you want me to tell you about it!");
+		    }
+
+			// Tell the caller that we're finished.
+			if (typeof callback === "function") {
+			    callback();
+		    }
+		};
+		
+		new WMD("alert-input", "alert-toolbar", {
+			commands: "strong em spacer alert",
+			commandTable: { "alert": { text: "Alert", title: "Alert the current selection Ctl+T", css: "wmd-alert", shortcut: "t" } }
+		});
+	});
+</script>
