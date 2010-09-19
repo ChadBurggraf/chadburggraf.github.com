@@ -1,6 +1,7 @@
 ---
-layout: wmd
+layout: project
 title: Customization - WMD
+project: wmd
 css: [/assets/wmd/wmd.css]
 scripts: [/assets/wmd/wmd.js]
 ---

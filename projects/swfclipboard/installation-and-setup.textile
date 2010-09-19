@@ -1,0 +1,80 @@
+---
+layout: project
+title: Installation &amp; Setup - SWFClipboard
+project: swfclipboard
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SWFClipboard":/projects/swfclipboard &raquo; %Installation &amp; Setup%
+
+h1. SWFClipboard Installation &amp; Setup
+
+p(meta). Updated 19 Sep 2010
+
+For convenience, the source distribution contains a build script. If you're just trying to get SWFClipboard working on your site, you can "ignore this part":#reference.
+
+In order to build the source, the following must be true on your system (Mac/Linux):
+
+* The "Flex SDK":http://www.adobe.com/products/flex/flexdownloads/index.html must be installed, with the *mxmlc* compiler available in your @PATH@
+* The "Java":http://java.com/en/download/manual.jsp runtime must be installed, with the *java* executable available in your @PATH@
+
+If your system does not meet the above requirements, and you don't want it to, you can always build @src/SWFClipboard.as@ using whatever tools you'd like. Similarly, you can minify @src/SWFClipboard.js@ using whatever minifier you'd like.
+
+You can run the build script with minification enabled (default) or not:
+
+<script src="http://gist.github.com/587042.js?file=swfclipboard-installation-01.sh"></script>
+
+* @--nocompress@ will turn off JavaScript minification
+
+h2(#reference). Reference It!
+
+SWFClipboard has no dependencies. To set up, include the JavaScript file in your document's @head@:
+
+<script src="http://gist.github.com/587042.js?file=swfclipboard-installation-02.html"></script>
+
+Make sure @swfclipboard-1.2.swf@ is available in your web directory as well. By default, the Flash movie is assumed to be located in *the same directory as the HTML document itself.* You can override this location during construction (see "Construction Options":#options).
+
+h2. Instantiate It!
+
+Now  you can instantiate a new SWFClipboard instance to start rocking some copy action:
+
+<script src="http://gist.github.com/587042.js?file=swfclipboard-installation-02.js"></script>
+
+@my_target@ is the DOM element or ID that will invoke copy actions, @text_to_copy@ is the text that will be copied, and @options@ is a hash of overridable parameters.
+
+h2(#options). Construction Options
+
+The options available in the @options@ hash are:
+
+* @css@ - _(swfclipboard)_ The CSS class to apply to the @div@ that the Flash @object@ element will be wrapped in
+* @flashUrl@ - _(swfclipboard-1.2.swf)_ The URL to the @swfclipboard.swf@ file, relative to the HTML document
+* @onFlashReady@ - _(null)_ A function to be called when the Flash movie is loaded and ready
+* @onTextCopied@ - _(null)_ A function to be called when a copy action has been invoked
+* @waitForLoad@ - _(false)_ A value indicating whether to wait for a @window.onload@ event before setting up the element 
+
+h2. Instance Functions
+
+The available functions on an @SWFClipboard@ instance are:
+
+@destroy()@
+
+Destroys the @SWFClipboard@ instance's DOM.
+
+@movie()@
+
+Gets a reference to the actual Flash movie's DOM element.
+
+@setCopyText(copyText)@
+
+Sets the text that will be copied when the clipboard is activated.
+
+* @copyText@ - The text to copy, if copying is still desired. Can also be @null@ or @undefined@ to disable copying.
+
+@setTarget(target)@
+
+Sets the target element the clipboard is intercepting clicks for.
+
+* @target@ - The DOM element or ID that will invoke copy actions.
+
+Note that if a clipboard instance's target element is a link (anchor tag), and that link has an @href@ attribute pointing to a valid URL, the clipboard will navigate to the URL after the text has been copied. This will not happen if the URL begins with @javascript:@.
+
+Whew! Now that you're all set up, check out the "demo":demo.html for some usage examples.

@@ -1,6 +1,7 @@
 ---
-layout: wmd
+layout: project
 title: Demo &amp; Installation - WMD
+project: wmd
 css: [/assets/wmd/wmd.css]
 scripts: [/assets/wmd/wmd.js]
 ---
@@ -68,6 +69,8 @@ h3. JS
 		</tr>
 	</tbody>
 </table>
+
+I know! This was way too easy. Grab a drink, then head over to learn about "customization":customization.html.
 
 <script type="text/javascript">
 	$(document).ready(function() {

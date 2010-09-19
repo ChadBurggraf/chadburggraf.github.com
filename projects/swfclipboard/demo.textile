@@ -1,17 +1,16 @@
 ---
-layout: default
-title: SWFClipboard
+layout: project
+title: Demo - SWFClipboard
+project: swfclipboard
 ---
 
-p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %SWFClipboard%
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SWFClipboard":/projects/swfclipboard &raquo; %Demo%
 
-h1(#top). JavaScript + ??? = Clipboard
+h1. SWFClipboard Demo
 
-p(meta). Updated 12 Sep 2010
+p(meta). Updated 19 Sep 2010
 
-The answer: *Flash!* It's fun to loathe Flash, but sometimes it solves the problem you need solved. I needed a nice, clean way to provide *~1,000* clipboard targets on a page. You might only need to provide one. Either way, SWFClipboard has got your back.
-
-Okay, so let's jump straight into some code samples and live demos:
+All right then, let's get into some sample code and rockin' live demos:
 
 "Hello, world!":#hello-world | "Copy &amp; Navigate":#copy-navigate | "Copy &amp; Notify":#copy-notify | "Dynamic Targets":#dynamic-targets  
 
@@ -19,7 +18,7 @@ h2(#hello-world). Hello, World!
 
 To get started, try <a id="hello-world-target" href="javascript:void(0);">clicking me</a> to copy _Hello, world!_ to your clipboard.
 
-<script src="http://gist.github.com/576733.js?file=swfclipboard-01.js"></script>
+<script src="http://gist.github.com/576733.js?file=swfclipboard-demo-01.js"></script>
 
 "back to top":#top
 
@@ -27,7 +26,7 @@ h2(#copy-navigate). Copy &amp; Navigate
 
 Now let's try and navigate to <a id="copy-navigate-target" href="http://google.com/">http://google.com/</a> while copying "Goooogle" to the clipboard.
 
-<script src="http://gist.github.com/576733.js?file=swfclipboard-02.js"></script>
+<script src="http://gist.github.com/576733.js?file=swfclipboard-demo-02.js"></script>
 
 Navigation behavior is inferred from the target element. Since the element above is a link to *http://google.com/*, the link is followed after the copy action takes place.
 
@@ -39,7 +38,7 @@ h2(#copy-notify). Copy &amp; Notify
 
 Often we'll want to do something once text has been successfully copied to the user's clipboard. This time, after you copy <a id="copy-notify-target" href="javascript:void(0);">&quot;Alerts are terrible!&quot;</a>, you should see an alert notifying you that it is, in fact, terrible.
 
-<script src="http://gist.github.com/576733.js?file=swfclipboard-03.js"></script>
+<script src="http://gist.github.com/576733.js?file=swfclipboard-demo-03.js"></script>
 
 "back to top":#top
 
@@ -55,11 +54,9 @@ Each link below should copy its own text to your clipboard.
 * <a class="clipboard" href="javascript:void(0);">Target 2</a>
 * <a class="clipboard" href="javascript:void(0);">Target 3</a>
 
-<script src="http://gist.github.com/576733.js?file=swfclipboard-04.js"></script>
+<script src="http://gist.github.com/576733.js?file=swfclipboard-demo-04.js"></script>
 
 "back to top":#top
-
-You can browse or clone the repository from "http://github.com/ChadBurggraf/swfclipboard":http://github.com/ChadBurggraf/swfclipboard. Or just grab a release from "http://github.com/ChadBurggraf/swfclipboard/downloads":http://github.com/ChadBurggraf/swfclipboard/downloads.
 
 <script type="text/javascript" src="/assets/swfclipboard/swfclipboard-1.2.js"></script>
 <script type="text/javascript">
@@ -83,4 +80,4 @@ You can browse or clone the repository from "http://github.com/ChadBurggraf/swfc
             }
         };
 	});
-</script>
+</script> 

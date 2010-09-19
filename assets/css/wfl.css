@@ -120,6 +120,11 @@ sup
 	margin: 0 3px;
 }
 
+table
+{
+	margin-bottom: 22px;
+}
+
 #container
 {
 	min-height: 100%;
@@ -148,6 +153,18 @@ sup
 #footer 
 {
 	height: 339px;
+}
+
+#footer-bg
+{
+	width: 100%;
+	height: 339px
+}
+
+#header-bg
+{
+	width: 100%;
+	height: 525px;
 }
 
 #logo 

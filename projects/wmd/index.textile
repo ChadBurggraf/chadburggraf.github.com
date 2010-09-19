@@ -1,6 +1,7 @@
 ---
-layout: wmd
+layout: project
 title: WMD
+project: wmd
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %WMD%
@@ -14,7 +15,7 @@ Check out the the following Usage Guides:
 * "Demo &amp; Installation":demo-and-installation.html
 * "Customization":customization.html
 
-h2. What it is
+h2. What It Is
 
 WMD was originally developed by John Fraser/"AttackLab":http://attacklab.net/, and the original demo and download site is "still available":http://wmd-editor.com/.
 
@@ -27,18 +28,19 @@ This, for better or worse, is a fork of StackOverflow's fork. There are many rea
 * Provide a clean mechanism for extending the editor with custom commands
 * *Maintain library independence* - as StackOverflow are planning on introducing a jQuery dependence with their upcoming "3.0" release
 
-h2. Why it's awesome
+h2. Why It's Awesome
 
 Well, it's mostly awesome because John did such a great job with showdown.js and the original editor. It's also awesome because StackOverflow did such a great job recovering the source.
 
-The tiny, itsy-bitsy bit of awesome I added to it is pretty cool too.
+The tiny, itsy-bitsy bit of awesome I added to it is pretty cool too, though.
 
 All of the tough stuff that goes into building an editor like this was done by John. All of those verbose regular expressions. But man, you sure had to get down and dirty if you wanted to change any of the external behavior.
 
-I just yanked all of his core code out and re-packaged it into a bit of a cleaner surface area. I also added a number of extension points, hopefully making it easier for people to add new commands or otherwise change behavior. I've successfully used this version of the editor in a couple of projects, and it makes doing things like providing an uploaded file browser for choosing links and images much more sane.
+I just yanked all of his core code out and re-packaged it into a bit of a cleaner surface area. I also added a number of extension points, hopefully making it easier for people to add new commands or otherwise change behavior. I've successfully used this version of the editor on a couple of projects, and it makes doing things like providing an uploaded file browser for choosing links and images much more sane.
 
 So, thanks go to John and the guys at StackOverflow. You're awesome.
 
-h2. Check it out
+h2. Check It Out
 
-You can browse or clone the repository from "http://github.com/ChadBurggraf/wmd":http://github.com/ChadBurggraf/wmd. Or just grab a release from "http://github.com/ChadBurggraf/wmd/downloads":http://github.com/ChadBurggraf/wmd/downloads.
+* "Source code":http://github.com/ChadBurggraf/wmd
+* "Download a release":http://github.com/ChadBurggraf/wmd/downloads

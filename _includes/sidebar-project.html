@@ -1,0 +1,24 @@
+<div id="sidebar">
+	<ul class="sidebar">
+		<li class="widget hi">
+			<p>
+				You're diving deep into <strong>{{ site.projects[page.project].name }}</strong>.
+			</p>
+			<p>
+				<a href="{{ site.projects[page.project].url }}">Check it out on <strong>GitHub</strong> &raquo;</a><br/>
+				<a href="/projects">Get back to the projects list &raquo;</a>
+			</p>
+		</li>
+		<li class="widget guide">
+			<h4><span>Usage Guide Subjects</span></h4>
+			<ul>
+			{% for guide in site.projects[page.project].guides %}
+				<li>
+					<a title="{{ guide.title }}" href="{{ guide.url }}">{{ guide.title }}</a>
+				</li>
+			{% endfor %}
+			</ul>
+		</li>
+		{% include search-widget.html %}
+	</ul>
+</div>

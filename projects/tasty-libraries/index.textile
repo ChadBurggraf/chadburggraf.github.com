@@ -1,6 +1,7 @@
 ---
-layout: tasty-libraries
+layout: project
 title: Tasty Libaries
+project: tasty
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %Tasty Libraries%
@@ -28,4 +29,5 @@ There isn't anything super revolutionary in there. However, it's used often by m
 
 h2. Check it out
 
-You can browse or clone the repository from "http://github.com/ChadBurggraf/tasty":http://github.com/ChadBurggraf/tasty. Or just grab a binary release from "http://github.com/ChadBurggraf/tasty/downloads":http://github.com/ChadBurggraf/tasty/downloads.
+* "Source code":http://github.com/ChadBurggraf/tasty
+* "Download a release":http://github.com/ChadBurggraf/tasty/downloads

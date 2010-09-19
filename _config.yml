@@ -1,3 +1,40 @@
 auto:       true
 server:     true
 pygments:   true
+projects:
+    kayjax:
+        name: Kayjax
+        url: http://github.com/ChadBurggraf/kayjax
+        guides: [
+        ]
+    sthreeql:
+        name: SThreeQL
+        url: http://github.com/ChadBurggraf/sthreeql
+        guides: [
+            {title: Configuration, url: configuration.html},
+            {title: Running from the Command Line, url: running-from-the-command-line.html},
+            {title: Installing the Service, url: installing-the-service.html}
+        ]
+    swfclipboard:
+        name: SWFClipboard
+        url: http://github.com/ChadBurggraf/swfclipboard
+        guides: [
+            {title: Installation &amp; Setup, url: installation-and-setup.html},
+            {title: Demo, url: demo.html}
+        ]
+    tasty:
+        name: Tasty Libraries
+        url: http://github.com/ChadBurggraf/tasty
+        guides: [
+            {title: Background Jobs, url: background-jobs.html},
+            {title: URL Tokens, url: url-tokens.html},
+            {title: Geocoding, url: geocoding.html},
+            {title: HTTP Redirects, url: http-redirects.html}
+        ]
+    wmd:
+        name: WMD
+        url: http://github.com/ChadBurggraf/wmd
+        guides: [
+            {title: Demo &amp; Installation, url: demo-and-installation.html}, 
+            {title: Customization, url: customization.html}
+        ]

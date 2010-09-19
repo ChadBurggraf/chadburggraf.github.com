@@ -1,6 +1,7 @@
 ---
-layout: tasty-libraries
+layout: project
 title: Background Jobs - Tasty Libaries
+project: tasty
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %Background Jobs%
@@ -107,4 +108,4 @@ That said, building your own is pretty simple. You need to implement @IJobStore@
 
 "back to top":#top
 
-Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/
+Browse the source code on "GitHub":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Jobs/.

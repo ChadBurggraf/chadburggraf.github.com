@@ -1,6 +1,7 @@
 ---
-layout: tasty-libraries
+layout: project
 title: URL Tokens - Tasty Libaries
+project: tasty
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %URL Tokens%
@@ -64,4 +65,4 @@ The library ships with @QueryStringUrlTokenUrlProvider@, which is currently the 
 
 "back to top":#top
 
-Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens
+Browse the source code on "GitHub":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Web/UrlTokens.

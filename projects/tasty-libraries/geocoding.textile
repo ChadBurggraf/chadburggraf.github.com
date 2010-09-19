@@ -1,6 +1,7 @@
 ---
-layout: tasty-libraries
+layout: project
 title: Geocoding - Tasty Libaries
+project: tasty
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Tasty Libraries":index.html &raquo; %Geocoding%
@@ -23,4 +24,4 @@ Pretty easy, eh? You can also add your API key to your configuration file and us
 
 There are a ton of classes in the @Tasty.Geocode@ namespace, covering (I believe) the entire "Geocoding API V2":http://code.google.com/apis/maps/documentation/geocoding/v2/index.html.
 
-Browse the source code on *GitHub:* "http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Geocode/":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Geocode/
+Browse the source code on "GitHub":http://github.com/ChadBurggraf/tasty/tree/master/Source/Tasty/Geocode/.

@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>{{ page.title }}</title>
-	<link type="text/css" rel="stylesheet" href="/assets/css/screen.css"/>
+	<link type="text/css" rel="stylesheet" href="/assets/css/wfl.css"/>
 	<link type="text/css" rel="stylesheet" href="/assets/fancybox/jquery.fancybox-1.3.1.css" media="screen"/>
 	{% for css in page.css %}
 	<link type="text/css" rel="stylesheet" href="{{ css }}"/>
@@ -21,7 +21,7 @@
 	<div id="container">
 		<div id="page">
 			<div id="header">
-				<img src="/assets/images/header-bg.jpg" alt="" style="width:100%;height:525px"/>
+				<img id="header-bg" src="/assets/images/header-bg.jpg" alt=""/>
 				<p id="logo">
 					<a href="/"><span>Waiting For Localhost</span></a>
 				</p>

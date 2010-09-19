@@ -1,0 +1,13 @@
+---
+layout: project
+title: Kayjax
+project: kayjax
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %Kayjax%
+
+h1(#top). Kayjax a.k.a. Lightweight JSON + Ajax in C#
+
+p(meta). Updated 19 Sep 2010
+
+Stuff and things are coming soon, bro.

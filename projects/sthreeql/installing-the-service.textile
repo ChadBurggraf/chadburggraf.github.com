@@ -1,6 +1,7 @@
 ---
-layout: sthreeql
+layout: project
 title: Installing the Service - SThreeQL
+project: sthreeql
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &raquo; %Instlling the Service%

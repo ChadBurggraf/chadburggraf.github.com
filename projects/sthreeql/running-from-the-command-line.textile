@@ -1,6 +1,7 @@
 ---
-layout: sthreeql
+layout: project
 title: Running From the Command Line - SThreeQL
+project: sthreeql
 ---
 
 p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "SThreeQL":index.html &raquo; %Running From the Command Line%

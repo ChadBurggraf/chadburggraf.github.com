@@ -1,0 +1,31 @@
+---
+layout: project
+title: SWFClipboard
+project: swfclipboard
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %SWFClipboard%
+
+h1(#top). JavaScript + ??? = Clipboard
+
+p(meta). Updated 19 Sep 2010
+
+Check out the following usage guides:
+
+* "Installation &amp; Setup":installation-and-setup.html
+* "Demo":demo.html
+
+h2. What It Is
+
+So, _JavaScript + ??? = Clipboard_? The answer: *Flash!* It's fun to loathe Flash, but sometimes it solves the problem you need solved. I needed a nice, clean way to provide *~1,000* clipboard targets on a page. You might only need to provide one. Either way, SWFClipboard has got your back.
+
+h2. Why It's Awesome
+
+You get a really simple interface for dealing with user's clipboards across all browsers. You can target any element on the page without any custom setup. There are no library dependencies.
+
+I don't know about you, but those look like the ingredients for _awesome_ to me.
+
+h2. Check It Out
+
+* "Source code":http://github.com/ChadBurggraf/swfclipboard
+* "Download a release":http://github.com/ChadBurggraf/swfclipboard/downloads

@@ -22,7 +22,7 @@ A web-based password management service that I've been running since 2006. This 
 
 h2. Tasty Libraries
 
-My *monolithic* general purpose C# library. Against standard wisdom, I'm packing every reusable module I write into one massive DLL so I can easily drop it into new projects. Includes things like convenience extension methods, a Google geocoding client library, a background job queue and processor, a URL token library and a bunch more. My C# kitchen sink.
+My *monolithic* general purpose C# library. Against standard wisdom, I'm packing every reusable module I write into one massive DLL so I can easily drop it into new projects. Includes things like a background job queue + processor, convenience extension methods, a Google geocoding client library, a URL token library and a bunch more. My C# kitchen sink.
 
 * Get a "binary release":http://github.com/ChadBurggraf/tasty/downloads
 * Get the "source code":http://github.com/ChadBurggraf/tasty
@@ -50,9 +50,9 @@ h2. SWFClipboard
 
 A JavaScript interface for interacting with a user's clipboard via Flash. I use this to provide clipboard functionality on "Virtual Keychain":http://virtualkeychain.com/.
 
-* Get a "relase":http://github.com/ChadBurggraf/swfclipboard/downloads
+* Get a "release":http://github.com/ChadBurggraf/swfclipboard/downloads
 * Get the "source code (GitHub)":http://github.com/ChadBurggraf/swfclipboard
-* Read the "documentation":swfclipboard.html
+* Read the "documentation":swfclipboard/
 
 h2. WMD
 
