@@ -150,6 +150,24 @@ table
 	background: url(../images/content-bg.png) no-repeat;
 }
 
+#feed
+{
+	position: absolute;
+	border: none;
+	width: 14px;
+	height: 14px;
+	padding: 0;
+	text-shadow: 0;
+	top: 8px;
+	left: 5px;
+}
+
+#feed img
+{
+	display: block;
+	border: none;
+}
+
 #footer 
 {
 	height: 339px;
@@ -158,7 +176,7 @@ table
 #footer-bg
 {
 	width: 100%;
-	height: 339px
+	height: 339px;
 }
 
 #header-bg
@@ -423,6 +441,7 @@ p.meta
 	letter-spacing: 2px;
 	border-bottom: solid 1px #e9f6fb;
 	height: 30px;
+	position: relative;
 }
 
 .sidebar h4 span,

@@ -33,7 +33,10 @@
 			</ul>
 		</li>
 		<li class="widget articles">
-			<h4><a href="/archive.html" title="Check out all my awesome info porn">Articles</a></h4>
+			<h4>
+				<a href="/archive.html" title="Check out all my awesome info porn">Articles</a>
+				<a id="feed" href="/atom.xml" title="Subscribe to the feed"><img src="/assets/images/feed-icon-14x14.png" alt="Subscribe"/></a>
+			</h4>
 			<ul>
 				{% for post in site.posts limit:10 %}
 				<li>
