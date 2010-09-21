@@ -15,7 +15,7 @@ h2. Software
 
 All pages on this site are 100% statically served. I write everything in *Notepad.exe*, live, on the server.
 
-The first part is true. Everything is actually built using the absurdly-easy-to-use "Jekyll":http://github.com/mojombo/jekyll static site generator. The site's source is on *GitHub* for your perusing pleasure: "http://github.com/ChadBurggraf/wfl":http://github.com/ChadBurggraf/wfl.
+The first part is true. Everything is actually built using the absurdly-easy-to-use "Jekyll":http://github.com/mojombo/jekyll static site generator. The site's source is on "GitHub":http://github.com/ChadBurggraf/chadburggraf.github.com for your perusing pleasure.
 
 h2. What's In A Name?
 
