@@ -49,7 +49,7 @@ The options available in the @options@ hash are:
 * @flashUrl@ - _(swfclipboard-1.2.swf)_ The URL to the @swfclipboard.swf@ file, relative to the HTML document
 * @onFlashReady@ - _(null)_ A function to be called when the Flash movie is loaded and ready
 * @onTextCopied@ - _(null)_ A function to be called when a copy action has been invoked
-* @waitForLoad@ - _(false)_ A value indicating whether to wait for a @window.onload@ event before setting up the element 
+* @waitForLoad@ - _(false)_ A value indicating whether to wait for a @window.onload@ event before setting up the element references
 
 h2. Instance Functions
 

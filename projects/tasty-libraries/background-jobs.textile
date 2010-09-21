@@ -14,7 +14,7 @@ Jump to: "Configuration":#configuration | "Deployment":#deployment | "Persistenc
 
 You need a _middleweight_ product for processing background jobs in C#? Yeah, I do too!
 
-Background processing is a huge topic, and there are a ton of hacky and enterprise-grade solutions out there for getting it done. *This isn't one of those solutions.*
+Background processing is a huge topic, and there are plenty of hacky to enterprise-grade solutions out there for getting it done. *This isn't one of those solutions.*
 
 However, this is _a solution_. It might be _your solution_ if:
 
@@ -100,7 +100,7 @@ The persistence layer is pluggable, so you can implement your own if necessary. 
 
 1. @MemoryJobStore@ - All job state is maintained in memory. This store is unbounded, and is intended primarily for testing and playground usage.
 2. @SqlServerJobStore@ - Persistence to Microsoft SQL Server.
-3. @PostgresJobStore@ - Persistence to PostgresSQL.
+3. @PostgresJobStore@ - Persistence to PostgreSQL.
 
 You're probably already wondering where your technology of choice is (ahem, MySQL or SQLLite). Yeah, I know. Send "me an email":mailto:chad.burggraf@gmail.com and I'd be happy to look into building it for you.
 

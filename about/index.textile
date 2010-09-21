@@ -7,35 +7,16 @@ p(crumb). "Home":/ &raquo; %About%
 
 h1. Hi. My name is Chad Burggraf. I live in Arizona.
 
-p(meta). Updated 26 Aug 2010
+p(meta). Updated 20 Sep 2010
 
-!(frame right)/assets/images/chad-burggraf.jpg(Chad Burggraf is Rocking)! %(drop-cap)T% o be honest with you, I'm not completely sure why I have a website. It appears to be required as a technology-savvy 20-something. So here we are.
+!(frame right)/assets/images/chad-burggraf.jpg(Chad Burggraf is Rocking)! %(drop-cap)I% am 5'11", 155 lbs (thanks parents - you just had to hold out on that last gorgeous inch, didn't you?). I have hazel eyes and brown hair. I'm a Gemini. 
 
-Moving right along, then. I have four primary interests:
+Wait. Right. You *definitely do not care.*
 
-# Working
-# Reading
-# Drinking
-# Rocking
+Good.
 
-h2. Working
+I was a child. Then I was not. I went to school. Then I got a job. I played in some bands and met some friends (even a few girls) along the way.
 
-As in, _writing programs_.
+Ultimately, my favorite pastimes are reading and ruminating. Doesn't matter much about what. Good "television":http://en.wikipedia.org/wiki/The_Wire, the "great":http://www.amazon.com/East-Eden-John-Steinbeck/dp/0142000655/ref=sr_1_1?s=books&ie=UTF8&qid=1285046090&sr=1-1 "American":http://www.amazon.com/Amazing-Adventures-Kavalier-Clay/dp/0312282990/ref=sr_1_1?s=books&ie=UTF8&qid=1285046123&sr=1-1 "novel":http://www.amazon.com/Middlesex-Novel-Oprahs-Book-Club/dp/0312427735/ref=sr_1_1?s=books&ie=UTF8&qid=1285046161&sr=1-1, "rock":http://www.wilcoworld.net/ and "roll":http://www.trailofdead.com/. You know the stuff.
 
-Mostly, work involves me cradling my head in my hands in despair and exasperation. Sometimes, I come out alive and create something useful. I am vehemently *anti-rockstar* and *anti-clever*... possibly because I doubt I could ever actually personify either.
-
-I've mostly worked with the very *un-hip* _.NET_ platform (sssh, I secretly kind of like it). I also like and use _JavaScript_, _Objective-C_, _ActionScript_, _C_, _SQL_, etc. etc. I have very little interest in technology for technology's sake, and am prone to dive into whatever is available to *get the damn job done*.
-
-h2. Reading
-
-I read a lot, but very slowly. Offline, I read every _"Great":http://www.amazon.com/Amazing-Adventures-Kavalier-Clay/dp/0312282990/ref=sr_1_1?s=books&ie=UTF8&qid=1282778214&sr=1-1 "American":http://www.amazon.com/East-Eden-John-Steinbeck/dp/0142000655/ref=sr_1_1?s=books&ie=UTF8&qid=1282778241&sr=1-1 "Novel":http://www.amazon.com/One-Hundred-Years-Solitude-P-S/dp/0060883286/ref=sr_1_1?s=books&ie=UTF8&qid=1282778315&sr=1-1_ I can get my hands on (you're right, those links don't all fit). Online, I read anything interesting on the topics of _technology_, _entrepreneurship_, _economics_ or _politics_.
-
-I lurk voraciously on "Hacker News":http://news.ycombinator.com/.
-
-h2. Drinking
-
-Not so much in *quantity*, but *quality* drinking is an unmistakably important part of me. When you're in your late 20's and have never been particularly interested in sports or the outdoors, how else are you supposed to spend time with your friends? Plus, "good":http://www.fourpeaks.com/beers.asp "beer":http://www.firestonewalker.com/ is sent to us by angels.
-
-h2. Rocking
-
-It's all about getting in the _zone_. Rocking is a _state of mind_. Jack Black understands this. Actually, Jack White does as well.
+So if you find yourself in the dusty southwest and want to grab a beer, shoot the shit, or make fun of the fact that I sometimes write software for Windows, "drop me a line":mailto:chad.burggraf@gmail.com.

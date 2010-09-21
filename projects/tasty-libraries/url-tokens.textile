@@ -16,7 +16,7 @@ You're probably sending users password reset emails with some long, convoluted q
 
 What you want then, is to turn an *object* into a short and sweet *URL* and then later turn that *URL* back into an *object*.
 
-I've got that for you. And trust me, you're not going to find a better price anywhere.
+I've got that for you. And trust me, you're going to have a hard time beating my _LOW LOW PRICE OF JUST $0!_
 
 h2(#started). Getting Started
 

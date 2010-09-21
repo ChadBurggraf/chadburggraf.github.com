@@ -10,4 +10,4 @@ h1(#top). Kayjax a.k.a. Lightweight JSON + Ajax in C#
 
 p(meta). Updated 19 Sep 2010
 
-Stuff and things are coming soon, bro.
+Take it easy. I'm workin' on it!

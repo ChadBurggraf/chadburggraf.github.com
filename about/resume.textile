@@ -1,0 +1,10 @@
+---
+layout: about
+title: Chad Burggraf's Résumé
+---
+
+p(crumb). "Home":/ &raquo; %Résumé%
+
+Just one second, I'm making waffles (I've never made waffles).
+
+In other words, coming soon...
