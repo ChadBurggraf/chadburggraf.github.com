@@ -7,7 +7,7 @@ p(crumb). "Home":/ &raquo; %Projects%
 
 h1. Show Me The Code!
 
-p(meta). Updated 26 Aug 2010
+p(meta). Updated 12 Oct 2010
 
 %(drop-cap)L% ike every &quot;great&quot; developer, I make it 50% - 80% of the way through *many, many* projects before abandoning them. Once in a while, I get something to the point where I'm only _embarrassed_, rather than _mortified_, about it. Below is a small sampling of such. 
 
@@ -27,6 +27,16 @@ My *monolithic* general purpose C# library. Against standard wisdom, I'm packing
 * Get a "binary release":http://github.com/ChadBurggraf/tasty/downloads
 * Get the "source code":http://github.com/ChadBurggraf/tasty
 * Read the "documentation":tasty-libraries/
+
+h2. Zencoder .NET
+
+A .NET C# client library for the "zencoder.com":http://zencoder.com/ API(Application Programming Interface). 
+
+This is an attempt at a fully object-oriented implementation of the Zencoder API for .NET. Check out "http://zencoder.com/docs/api":http://zencoder.com/docs/api for full documentation.
+
+* Get a "binary release":http://github.com/ChadBurggraf/zencoder-cs/downloads
+* Get the "source code":http://github.com/ChadBurggraf/zencoder-cs
+* Read the "documentation":zencoder-net/
 
 h2. SThreeQL
 

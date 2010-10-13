@@ -1,0 +1,31 @@
+---
+layout: project
+title: Basic Usage - Zencoder .NET
+project: zencoder-net
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Zencoder .NET":index.html &raquo; %Basic Usage%
+
+h1. Transcoding With Zencoder
+
+p(meta). Updated 12 Oct 2010
+
+Drop a reference to @Zencoder.dll@ in your project, and declare a @using Zencoder;@ statement at the beginning of your source file. You're ready to go!
+
+All of the "Zencoder API":http://zencoder.com/docs/api requests are covered by individual @Request@ and @Response@ objects. You can access these directly if you'd like, or you can go through a global service container (aptly named @Zencoder@).
+
+So, create a @Zencoder@ instance with your API key:
+
+<script src="http://gist.github.com/623212.js?file=zencoder-net-basic-usage-01.cs"></script>
+
+You can then create a transcoding job:
+
+<script src="http://gist.github.com/623212.js?file=zencoder-net-basic-usage-02.cs"></script>
+
+If you're super fancy, you could run the above API call asynchronously:
+
+<script src="http://gist.github.com/623212.js?file=zencoder-net-basic-usage-03.cs"></script>
+
+All of the common request parameters are enumerated out as arguments on the corresponding @Zencoder@ methods. However, if you need to tweak your requests further, you will need to instantiate the appropriate @Request@ object and then set its properties accordingly.
+
+So, that's pretty much it. Now go transcode some multimedia (that word is _so 1997_).

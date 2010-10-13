@@ -1,0 +1,49 @@
+---
+layout: project
+title: Notifications - Zencoder .NET
+project: zencoder-net
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; "Zencoder .NET":index.html &raquo; %Notifications%
+
+h1(#top). Getting Notified
+
+p(meta). Updated 12 Oct 2010
+
+Jump to: "Configuration":#configuration
+
+You can define both "email and HTTP notifications":http://zencoder.com/docs/api/#notifications with your job outputs. Assuming you're running some sort of ASP.NET web application and would like to set it up to receive those notifications, this is the place for you!
+
+Zencoder .NET ships with a built-in @NotificationHandler@, which you can drop into your request pipeline to process notifications from the Zencoder service for you. Just create one or more classes to handle notification events, and you're off to the races.
+
+h2(#configuration). Configuration
+
+First up, configure the HTTP handler as shown below. I've included configuration for IIS6 and 7+, so this should work on any setup you've got. Note that the @path@ value defines the URL you should pass Zencoder when telling them you want to receive notifications for a job output (we'll get to that in a second):
+
+<script src="http://gist.github.com/623222.js?file=zencoder-net-notifications-01.xml"></script>
+
+I know that seems like a lot of XML, but it's really just two handler definitions and then configuring your notification receivers. Do it once and forget about it.
+
+"back to top":#top
+
+h2(#receivers). Implement INotificationReceiver
+
+Implementing @INotificationReceiver@ is pretty self explanatory:
+
+<script src="http://gist.github.com/623222.js?file=zencoder-net-notifications-02.cs"></script>
+
+The interface is a single method, which receives the information sent to the handler by Zencoder encapsulated all nice and tidy for you.
+
+"back to top":#top
+
+h2(#asking). Asking To Be Notified
+
+Let's assume you have your receiver class all coded up, and you've got your configuration down pat. Now you just need to let Zencoder know that you'd like to be notified while you're creating a job.
+
+If your site lives at _http://example.com/_ and you used the same configuration as I demonstrated above, you'd tell Zencoder that you'd like to be notified at _http://example.com/zencoder.ashx_:
+
+<script src="http://gist.github.com/623222.js?file=zencoder-net-notifications-03.cs"></script>
+
+And that's pretty much it. You could also set the @Notifications@ array explicitly during property initialization if you prefer (yes, you can add multiple notifications to each output - they can also be a mix of email and HTTP notifications).
+
+"back to top":#top

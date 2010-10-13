@@ -1,0 +1,31 @@
+---
+layout: project
+title: Zencoder .NET
+project: zencoder-net
+---
+
+p(crumb). "Home":/ &raquo; "Projects":/projects &raquo; %Zencoder .NET%
+
+h1. Zencoder .NET
+
+p(meta). Updated 12 Oct 2010
+
+Check out the the following Usage Guides:
+
+* "Basic Usage":basic-usage.html
+* "Notifications":notifications.html
+
+h2. What It Is
+
+A .NET C# client library for the "Zencoder":http://zencoder.com/ API(Application Programming Interface).
+
+h2. Why It's Awesome
+
+Mostly because Zencoder is awesome. Also because it is *strongly typed*, *fully featured* and *async ready*.
+
+The entire API is covered (as of right now, anyway). If new API features come out I'll update the client accordingly. If you notice that something is missing, please do "let me know":mailto:chad.burggraf@gmail.com.
+
+h2. Check It Out
+
+* "Source code":http://github.com/ChadBurggraf/zencoder-cs
+* "Download a release":http://github.com/ChadBurggraf/zencoder-cs/downloads

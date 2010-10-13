@@ -38,3 +38,10 @@ projects:
             {title: Demo &amp; Installation, url: demo-and-installation.html}, 
             {title: Customization, url: customization.html}
         ]
+    zencoder-net:
+        name: Zencoder .NET
+        url: http://github.com/ChadBurggraf/zencoder-cs
+        guides: [
+            {title: Basic Usage, url: basic-usage.html},
+            {title: Notifications, url: notifications.html}
+        ]
